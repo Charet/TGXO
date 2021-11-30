@@ -1,11 +1,15 @@
 # -*- coding:utf-8 -*-
-import os
+from os import remove, path
+from config import *
 
 
 def delete(bot, message):
     chat_id = message["chat"]["id"]
-    with open(bot.path_converter(bot.plugin_dir + "Delete/__init__.py"), "r", encoding="utf-8") as init:
-        prefix = init.readline()[1:].strip()  # 获取指令名
-    docname = message["text"][len(prefix) + 1:]  # 指令后参数
-    os.remove("./posts/" + docname + ".md")
-    bot.sendMessage(chat_id, "Article " + docname + " was deleted successfully!")
+    doc_name = message["text"][8:]
+    doc_path = f'{post_path}/{doc_name}.md'
+
+    if path.exists(doc_path):
+        remove(doc_path)
+        bot.sendMessage(chat_id, f'Article {doc_name} was deleted successfully!')
+    else:
+        bot.sendMessage(chat_id, 'Article not found!')
