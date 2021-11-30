@@ -1,2 +1,2 @@
-#/Delete
+#/delete
 #Delete Plugin

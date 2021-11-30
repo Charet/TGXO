@@ -1,2 +1,2 @@
-#/List
+#/list
 #List Plugin
