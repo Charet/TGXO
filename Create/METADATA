@@ -1,0 +1,12 @@
+Metadata-version: 1.0
+Plugin-name: Create
+Version: 0.1.0
+Summary: Create a now article.
+Home-page: 
+Author: 
+Author-email: 
+License: 
+Keywords: 
+Requires-teelebot: >=1.18.0
+Requires-dist: 
+Source: 
