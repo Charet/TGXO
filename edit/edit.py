@@ -1,4 +1,4 @@
 # -*- coding:utf-8 -*-
 
-def edit(bot, message):
+def Edit(bot, message):
     pass
