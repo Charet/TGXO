@@ -1,18 +1,16 @@
 # -*- coding:utf-8 -*-
-import os
+from os import path
+from config import *
 
 
 def Create(bot, message):
-    text = {}
-    chat_id = message["chat"]["id"]
-    with open(bot.path_converter(bot.plugin_dir + "Create/__init__.py"), "r", encoding="utf-8") as init:
-        prefix = init.readline()[1:].strip()
-    docname = message["text"][len(prefix) + 1:]
-    doclist = os.listdir("./posts")
-    if docname + '.md' in doclist:
-        bot.sendMessage(chat_id, "The article has been created!")
+    chat_id = message['chat']['id']
+    doc_name = message['text'][8:]
+    doc_path = f'{hexo_path}/_posts/{doc_name}.md'
+
+    if path.exists(doc_path):
+        bot.sendMessage(chat_id, 'The article has been created!')
     else:
-        file = open("./posts/" + docname + ".md", "w")
+        file = open(doc_path, 'w')
         file.close()
-        docname = message["text"][len(prefix) + 1:]
-        bot.sendMessage(chat_id, "Article " + docname + "  was created successfully!")
+        bot.sendMessage(chat_id, f'Article {doc_name} was created successfully!')
