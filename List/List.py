@@ -10,7 +10,7 @@ def List(bot, message):
     if not doc_list:
         bot.sendMessage(chat_id, "You don't have article.")
     else:
-        doc_list_text = ''
+        doc_list_text = 'Document List:\n'
         for doc in doc_list:
             doc_list_text += f'{doc}\n'
         bot.sendMessage(chat_id, text=doc_list_text)

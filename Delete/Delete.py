@@ -10,6 +10,6 @@ def Delete(bot, message):
 
     if path.exists(doc_path):
         remove(doc_path)
-        bot.sendMessage(chat_id, f'Article {doc_name} was deleted successfully!')
+        bot.sendMessage(chat_id, f'Article *{doc_name}* was deleted successfully!', parse_mode="Markdown")
     else:
         bot.sendMessage(chat_id, 'Article not found!')
