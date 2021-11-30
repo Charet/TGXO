@@ -3,7 +3,7 @@ from os import remove, path
 from config import *
 
 
-def delete(bot, message):
+def Delete(bot, message):
     chat_id = message["chat"]["id"]
     doc_name = message["text"][8:]
     doc_path = f'{post_path}/{doc_name}.md'
