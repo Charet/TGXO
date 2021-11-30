@@ -6,7 +6,7 @@ from config import *
 def Create(bot, message):
     chat_id = message['chat']['id']
     doc_name = message['text'][8:]
-    doc_path = f'{post_path}/{doc_name}.md'
+    doc_path = f'{posts_path}/{doc_name}.md'
 
     if path.exists(doc_path):
         bot.sendMessage(chat_id, 'The article has been created!')

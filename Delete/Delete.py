@@ -6,7 +6,7 @@ from config import *
 def Delete(bot, message):
     chat_id = message["chat"]["id"]
     doc_name = message["text"][8:]
-    doc_path = f'{post_path}/{doc_name}.md'
+    doc_path = f'{posts_path}/{doc_name}.md'
 
     if path.exists(doc_path):
         remove(doc_path)
