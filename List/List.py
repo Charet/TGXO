@@ -2,12 +2,13 @@
 import os
 import time
 
-def list(bot, message):
+
+def List(bot, message):
     chat_id = message["chat"]["id"]
     doclist = os.listdir("./posts")
     doc = 'Document List:\n'
     if not doclist:
-        bot.sendMessage(chat_id,  "You don't have article.")
+        bot.sendMessage(chat_id, "You don't have article.")
     else:
         for i in doclist:
             doc = doc + i + '\n'

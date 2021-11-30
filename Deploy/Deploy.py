@@ -1,7 +1,6 @@
 # -*- coding:utf-8 -*-
 
 def deploy(bot, message):
-
     # root_id = bot.root_id
     # bot_id = bot.bot_id
     # author = bot.author
@@ -21,8 +20,7 @@ def deploy(bot, message):
     chat_type = message["chat"]["type"]
 
     prefix = ""
-    with open(bot.path_converter(bot.plugin_dir + "deploy/__init__.py"), "r", encoding="utf-8") as init:
+    with open(bot.path_converter(bot.plugin_dir + "Deploy/__init__.py"), "r", encoding="utf-8") as init:
         prefix = init.readline()[1:].strip()
-
 
     # Write your plugin code below
